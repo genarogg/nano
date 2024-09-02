@@ -47,7 +47,11 @@ const Input: React.FC<InputProps> = ({
   };
 
   return (
-    <div className={`container-input ${isFocused ? "focus" : ""}`}>
+    <div
+      className={`container-input ${isFocused ? "focus" : ""} ${
+        icono ? null : "no-icon"
+      }`}
+    >
       {icono && (
         <label htmlFor={id}>
           <Icono icono={icono} />

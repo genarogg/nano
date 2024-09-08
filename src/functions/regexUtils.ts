@@ -1,5 +1,5 @@
 /* Expresiones regulares */
-const $quitarAcentos = (cadena: string): string => {
+const quitarAcentos = (cadena: string): string => {
   const acentos: { [key: string]: string } = {
     á: "a",
     é: "e",
@@ -19,8 +19,8 @@ const $quitarAcentos = (cadena: string): string => {
     .toString();
 };
 
-const $regexUrl = (url: string): string => {
-  const newUrl = $quitarAcentos(url.toLowerCase())
+const regexUrl = (url: string): string => {
+  const newUrl = quitarAcentos(url.toLowerCase())
     .replace(/[^\w\s]/gi, "")
     .toString()
     .replaceAll(" ", "-");
@@ -33,4 +33,4 @@ const isValidEmail = (email: string): boolean => {
   return emailRegex.test(email);
 };
 
-export { $quitarAcentos, $regexUrl, isValidEmail };
+export { quitarAcentos, regexUrl, isValidEmail };

@@ -1,7 +1,10 @@
 import A from "./A";
 import Icono from "./Icono";
+import notify from "./notify";
 
-//botones
-import BtnExpansion from "./btn/expansion/BtnExpancion";
+export {
+  A,
+  Icono,
+  notify,
 
-export { A, Icono, BtnExpansion };
+};

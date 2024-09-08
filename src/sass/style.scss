@@ -1,6 +1,5 @@
-@import "./lib/normalize";
-
 @import "./global/variables";
-@import "./global/global";
+@import "./global/mixin";
 
+@import "./global/global";
 @import "../components/nano/style";

@@ -96,11 +96,11 @@ $azul: #007bff;
   }
 
   label {
-    @include center;
+    @include center-flex-xy;
     max-width: 46px;
     min-width: 46px;
     .icono {
-      @include center;
+      @include center-flex-xy;
       color: #fff;
     }
   }

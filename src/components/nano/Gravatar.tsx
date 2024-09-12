@@ -6,25 +6,19 @@ import { isValidEmail } from "@fn/regexUtils";
 
 interface GravatarProps {
   email: string;
+  alt: string;
+  size?: number;
 }
 
-const Gravatar: React.FC<GravatarProps> = ({ email }) => {
+const Gravatar: React.FC<GravatarProps> = ({ email, alt, size = 80 }) => {
   if (!isValidEmail(email)) {
-    return;
+    throw new Error("Invalid email");
   }
 
   const hash = md5(email.trim().toLowerCase());
   const url = `https://www.gravatar.com/avatar/${hash}`;
 
-  return (
-    <Image
-      src={url}
-      alt="Descripción de la imagen"
-      width={80}
-      height={80}
-      priority
-    />
-  );
+  return <Image src={url} alt={alt} width={size} height={size} priority />;
 };
 
 export default Gravatar;

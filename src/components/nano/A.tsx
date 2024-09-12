@@ -10,11 +10,7 @@ interface AProps {
 const A: React.FC<AProps> = ({ to, type, children, css }) => {
   if (type === "mailto") {
     return (
-      <a
-        href={`mailto
-      :${to}`}
-        className={css}
-      >
+      <a href={`mailto:${to}`} className={css}>
         {children}
       </a>
     );

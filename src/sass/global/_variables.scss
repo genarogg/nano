@@ -1,13 +1,17 @@
-$azul: #3c4ffd;
-$rojo: #ff333a;
-$gris: #10111e;
-$amarillo: #f2cb41;
-$verde: #41F271;
+$color-primary: #442897;
+$color-secondary: #ffac32;
+$color-tertiary: #f8ece3;
+$color-quaternary: #1c1c1c;
 
-$azul-unerg: #262d88;
+$font-family: "Nunito", sans-serif;
+$font-size: 16px;
+$font-weight: 400;
+$line-height: 1.5;
+$letter-spacing: 0.5px;
 
 $border-radius: 10px;
-$box-shadow: 0px 0 30px rgba(1, 41, 112, 0.1);
+$box-shadow: 0px 0 30px rgba(#012a70, 0.1);
 $border-color: #fff;
+$border: 1px solid $border-color;
+
 $text-color: #fff;
-$border: 1px solid #fff;

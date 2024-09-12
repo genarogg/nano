@@ -22,7 +22,7 @@ const Input: React.FC<InputFileProps> = ({
 }) => {
   const [isFocused, setIsFocused] = useState(false);
   const [hasContent, setHasContent] = useState(content);
-  const [fileName, setFileName] = useState<any>(""); // [1
+  const [fileName, setFileName] = useState<any>(""); 
   const fileInput = useRef<HTMLInputElement>(null);
 
   const normalizeFilename = (filename: string) => {

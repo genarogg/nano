@@ -1,0 +1,21 @@
+.wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  min-height: 100vh;
+  min-height: 100dvh;
+  background: #f0f0f0;
+}
+
+.header {
+  width: 100%;
+  background-color: $color-primary;
+}
+
+.footer {
+  align-self: flex-end;
+  background-color: $color-primary;
+  width: 100%;
+
+  color: $text-color;
+  text-align: center;
+}

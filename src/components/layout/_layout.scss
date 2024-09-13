@@ -3,7 +3,7 @@
   flex-wrap: wrap;
   min-height: 100vh;
   min-height: 100dvh;
-  background: #f0f0f0;
+  background-color: $color-quaternary;
 }
 
 .header {
@@ -17,5 +17,4 @@
   width: 100%;
 
   color: $text-color;
-  text-align: center;
 }

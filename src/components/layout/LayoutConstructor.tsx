@@ -1,3 +1,5 @@
+import HeaderLanding from "./headers/HeaderLanding";
+
 interface LayoutConstructorProps {
   children: React.ReactNode;
 }
@@ -5,9 +7,7 @@ interface LayoutConstructorProps {
 const LayoutConstructor: React.FC<LayoutConstructorProps> = ({ children }) => {
   return (
     <div className="wrapper">
-      <header className="header">
-        <p>header</p>
-      </header>
+      <HeaderLanding />
       <main className="main">{children}</main>
       <footer className="footer">
         <p>footer</p>

@@ -1,10 +1,10 @@
 interface IconoProps {
   icono?: React.ReactNode;
-  css?: string;
+  className?: string;
 }
 
-const Icono: React.FC<IconoProps> = ({ icono, css = " " }) => {
-  return <span className={`icono ${css}`}>{icono}</span>;
+const Icono: React.FC<IconoProps> = ({ icono, className = " " }) => {
+  return <span className={`icono ${className}`}>{icono}</span>;
 };
 
 export default Icono;

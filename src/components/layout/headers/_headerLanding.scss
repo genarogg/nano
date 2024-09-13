@@ -1,0 +1,52 @@
+.header.landing {
+  height: 90px;
+
+  .desktop {
+    display: flex;
+    justify-content: space-between;
+    height: 90px;
+
+    display: flex;
+    align-items: center;
+
+    padding: 0 30px;
+  }
+
+  .container-logo {
+    a {
+      img {
+        width: 220px;
+      }
+    }
+  }
+
+  .container-nav {
+    nav {
+      ul {
+        display: flex;
+        align-items: center;
+
+        li {
+          display: flex;
+          align-items: center;
+          height: 25px;
+          color: #fff;
+          font-size: 13px;
+          font-weight: 700;
+          letter-spacing: 1px;
+          text-transform: uppercase;
+
+          .container-icono {
+            margin: 0 5px 0 25px;
+            color: $color-secondary;
+
+            .icono{
+                display: flex;
+                font-size: 16px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

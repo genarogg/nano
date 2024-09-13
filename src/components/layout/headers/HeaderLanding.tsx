@@ -1,30 +1,36 @@
 import { A, Icono } from "@nano";
 
-import { FaHome, FaCommentDots, FaRegLightbulb } from "react-icons/fa";
-import { GoFileDirectory } from "react-icons/go";
-import { BsEnvelopePaper } from "react-icons/bs";
+import { FaEnvelopeOpenText } from "react-icons/fa";
+import { FaCommentDots } from "react-icons/fa";
+import { GoFileDirectoryFill } from "react-icons/go";
+import { FaLightbulb } from "react-icons/fa";
 import { FaHandHoldingDollar } from "react-icons/fa6";
+import { TiHome } from "react-icons/ti";
 
 interface HeaderLandingProps {}
 
 const menuItems = [
-  { href: "/", label: "Inicio", icon: <FaHome /> },
-  { href: "/quienes-somos", label: "Quiénes Somos", icon: <FaCommentDots /> },
-  { href: "/servicios", label: "Servicios", icon: <FaRegLightbulb /> },
-  { href: "/proyectos", label: "Proyectos", icon: <GoFileDirectory /> },
-  { href: "/precios", label: "Precios", icon: <FaHandHoldingDollar /> },
-  { href: "/contacto", label: "Contacto", icon: <BsEnvelopePaper /> },
+  { href: "/", label: "Inicio", icon: <TiHome /> },
+  { href: "#quienes-somos", label: "Quiénes Somos", icon: <FaCommentDots /> },
+  { href: "#servicios", label: "Servicios", icon: <FaLightbulb /> },
+  { href: "#proyectos", label: "Proyectos", icon: <GoFileDirectoryFill /> },
+  { href: "#precios", label: "Precios", icon: <FaHandHoldingDollar /> },
+  { href: "#contacto", label: "Contacto", icon: <FaEnvelopeOpenText /> },
 ];
 
 const HeaderLanding: React.FC<HeaderLandingProps> = () => {
-  return (
-    <header className="header">
+  const Logo = () => {
+    return (
       <div className="container-logo">
         <A href="/">
           <img src="/marca/logo.svg" alt="logo" />
         </A>
       </div>
+    );
+  };
 
+  const Nav = () => {
+    return (
       <div className="container-nav">
         <nav>
           <ul>
@@ -39,6 +45,20 @@ const HeaderLanding: React.FC<HeaderLandingProps> = () => {
           </ul>
         </nav>
       </div>
+    );
+  };
+
+  return (
+    <header className="header landing">
+      <div className="desktop">
+        <Logo />
+        <Nav />
+      </div>
+
+      {/* <div className="mobile">
+        <Logo />
+        <Nav />
+      </div> */}
     </header>
   );
 };

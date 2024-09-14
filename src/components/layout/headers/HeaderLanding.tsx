@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 import { FaEnvelopeOpenText } from "react-icons/fa";
 import { FaCommentDots } from "react-icons/fa";
@@ -6,6 +6,8 @@ import { GoFileDirectoryFill } from "react-icons/go";
 import { FaLightbulb } from "react-icons/fa";
 import { FaHandHoldingDollar } from "react-icons/fa6";
 import { TiHome } from "react-icons/ti";
+
+import { Btn3Hamburgues } from "@btn";
 
 import { A, Icono } from "@nano";
 
@@ -26,6 +28,8 @@ const menuItems = [
 ];
 
 const HeaderLanding: React.FC<HeaderLandingProps> = () => {
+  const [isActive, setIsActive] = useState(false);
+
   const Logo = () => {
     return (
       <div className="container-logo">
@@ -36,9 +40,15 @@ const HeaderLanding: React.FC<HeaderLandingProps> = () => {
     );
   };
 
-  const Nav = () => {
+  const Nav = ({ className = "", isActive, setIsActive }: any) => {
     return (
-      <div className="container-nav">
+      <div
+        onClick={() => {
+          setIsActive(!isActive);
+          /* fn && fn(); */
+        }}
+        className={`container-nav ${className}  ${isActive ? "active" : ""}`}
+      >
         <nav>
           <ul>
             {menuItems.map((item, index) => (
@@ -62,20 +72,20 @@ const HeaderLanding: React.FC<HeaderLandingProps> = () => {
   }, []);
 
   return (
-    <header className="header landing">
-      <div className="desktop" id="desktopHeader">
-        <Logo />
-        <Nav />
-        {/* <div className="navBetween">
-          
-        </div> */}
-      </div>
-
-      {/* <div className="mobile">
-        <Logo />
-        <Nav />
-      </div> */}
-    </header>
+    <>
+      <header className="header landing">
+        <div className="desktop" id="desktopHeader">
+          <Logo />
+          <Nav />
+          <Btn3Hamburgues
+            className={"btn-desktop"}
+            isActive={isActive}
+            setIsActive={setIsActive}
+          />
+        </div>
+        <Nav className="nav-xs" isActive={isActive} setIsActive={setIsActive} />
+      </header>
+    </>
   );
 };
 

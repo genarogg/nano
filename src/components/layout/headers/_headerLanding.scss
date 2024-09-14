@@ -1,7 +1,22 @@
+.wrapper {
+  min-height: 110vh;
+  min-height: 110dvh;
+}
+
+* {
+  transition: $transition;
+}
+
 .header.landing {
   height: 90px;
+  position: fixed;
+  top: 0;
 
   .desktop {
+    background-color: rgba($color-primary, 0.3);
+    backdrop-filter: blur(10px);
+    border-bottom: $border;
+
     display: flex;
     justify-content: space-between;
     height: 90px;
@@ -10,12 +25,42 @@
     align-items: center;
 
     padding: 0 30px;
+
+    &.scrolled {
+      padding: 0 15px;
+      height: 65px;
+
+      .container-logo {
+        a {
+          img,
+          svg {
+            width: 170px;
+          }
+        }
+      }
+
+      .container-nav {
+        nav {
+          ul {
+            li {
+              .container-icono {
+                margin: 0 5px 0 15px;
+              }
+            }
+          }
+        }
+      }
+    }
   }
 
   .container-logo {
     a {
-      img {
+      display: flex;
+
+      img,
+      svg {
         width: 220px;
+        fill: $color-secondary;
       }
     }
   }
@@ -40,13 +85,106 @@
             margin: 0 5px 0 25px;
             color: $color-secondary;
 
-            .icono{
-                display: flex;
-                font-size: 16px;
+            .icono {
+              display: flex;
+              font-size: 16px;
             }
           }
         }
       }
     }
   }
+}
+
+@include max-width(1500px) {
+  .header.landing {
+    .desktop {
+      height: 85px;
+      &.scrolled {
+        height: 60px;
+      }
+    }
+
+    .container-logo {
+      a {
+        img,
+        svg {
+          width: 180px;
+        }
+      }
+    }
+  }
+}
+
+@include max-width(1200px) {
+  .header.landing {
+    .desktop {
+      height: 75px;
+
+      &.scrolled {
+        height: 55px;
+
+        .container-logo {
+          a {
+            img,
+            svg {
+              width: 130px;
+            }
+          }
+        }
+      }
+    }
+
+    .container-logo {
+      a {
+        img,
+        svg {
+          width: 150px;
+        }
+      }
+    }
+  }
+}
+
+@include max-width(1000px) {
+  .header.landing {
+    .desktop {
+      height: 55px;
+      padding: 0 15px;
+
+      .container-logo {
+        a {
+          img,
+          svg {
+            width: 130px;
+          }
+        }
+      }
+
+      .container-nav {
+        nav {
+          ul {
+            li {
+              .container-icono {
+                margin: 0 5px 0 15px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@include max-width(900px) {
+  .header.landing {
+    .desktop {
+      .container-nav {
+        display: none;
+      }
+    }
+  }
+}
+
+@include between(950px, 600px) {
 }

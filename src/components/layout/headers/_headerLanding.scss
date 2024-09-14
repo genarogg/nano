@@ -3,15 +3,13 @@
   min-height: 110dvh;
 }
 
-
-
 .header.landing {
   height: 90px;
   position: fixed;
   top: 0;
 
   * {
-    transition: 6000ms all ease;
+    transition: $transition;
   }
 
   .desktop {
@@ -186,7 +184,7 @@
   }
 }
 
-@include max-width(900px) {
+@include max-width(950px) {
   .header.landing {
     .desktop {
       .container-nav {

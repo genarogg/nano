@@ -9,7 +9,8 @@ import { TiHome } from "react-icons/ti";
 
 import { Btn3Hamburgues } from "@btn";
 
-import { A, Icono } from "@nano";
+import { A } from "@nano";
+import Nav from "./Navs/Nav";
 
 import LogoMarca from "../../imgReact/Logo";
 import scrollHeader from "./HeaderFn/scrollHeader";
@@ -40,31 +41,6 @@ const HeaderLanding: React.FC<HeaderLandingProps> = () => {
     );
   };
 
-  const Nav = ({ className = "", isActive, setIsActive }: any) => {
-    return (
-      <div
-        onClick={() => {
-          setIsActive(!isActive);
-          /* fn && fn(); */
-        }}
-        className={`container-nav ${className}  ${isActive ? "active" : ""}`}
-      >
-        <nav>
-          <ul>
-            {menuItems.map((item, index) => (
-              <li key={index}>
-                <div className="container-icono">
-                  <Icono icono={item.icon} />
-                </div>
-                <A href={item.href}>{item.label}</A>
-              </li>
-            ))}
-          </ul>
-        </nav>
-      </div>
-    );
-  };
-
   useEffect(() => {
     window.onscroll = () => {
       scrollHeader();
@@ -76,14 +52,19 @@ const HeaderLanding: React.FC<HeaderLandingProps> = () => {
       <header className="header landing">
         <div className="desktop" id="desktopHeader">
           <Logo />
-          <Nav />
+          <Nav menuItems={menuItems} />
           <Btn3Hamburgues
             className={"btn-desktop"}
             isActive={isActive}
             setIsActive={setIsActive}
           />
         </div>
-        <Nav className="nav-xs" isActive={isActive} setIsActive={setIsActive} />
+        <Nav
+          menuItems={menuItems}
+          className="nav-xs"
+          isActive={isActive}
+          setIsActive={setIsActive}
+        />
       </header>
     </>
   );

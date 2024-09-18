@@ -9,6 +9,7 @@ interface InputFileProps {
   icono: any;
   valueChange: (file: File) => void;
   content?: boolean;
+  className?: string;
 }
 
 const Input: React.FC<InputFileProps> = ({
@@ -19,6 +20,7 @@ const Input: React.FC<InputFileProps> = ({
   icono,
   valueChange,
   content = false,
+  className = "",
 }) => {
   const [isFocused, setIsFocused] = useState(false);
   const [hasContent, setHasContent] = useState(content);
@@ -59,7 +61,7 @@ const Input: React.FC<InputFileProps> = ({
   };
 
   return (
-    <div className={`container-input ${isFocused ? "focus" : ""}`}>
+    <div className={`container-input ${className} ${isFocused ? "focus" : ""}`}>
       <label htmlFor={id}>
         <Icono icono={icono} />
       </label>

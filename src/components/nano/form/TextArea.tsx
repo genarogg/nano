@@ -5,10 +5,11 @@ interface TextAreaProps {
   id?: string;
   placeholder: string;
   required?: boolean;
- 
+
   value: string | number | boolean;
   valueChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
   content?: boolean;
+  className?: string;
 }
 
 const TextArea: React.FC<TextAreaProps> = ({
@@ -20,6 +21,7 @@ const TextArea: React.FC<TextAreaProps> = ({
   value,
   valueChange,
   content = false,
+  className = "",
   ...props
 }) => {
   const [isFocused, setIsFocused] = useState(false);
@@ -31,7 +33,12 @@ const TextArea: React.FC<TextAreaProps> = ({
   };
 
   return (
-    <div className={`container-input textarea ${isFocused ? "focus" : ""}`} {...props}>
+    <div
+      className={`container-input textarea ${className} ${
+        isFocused ? "focus" : ""
+      }`}
+      {...props}
+    >
       <textarea
         name={name}
         required={required}
@@ -40,7 +47,7 @@ const TextArea: React.FC<TextAreaProps> = ({
         onBlur={() => setIsFocused(false)}
         onChange={handleInputChange}
         value={value as string | number | readonly string[] | undefined}
-        style={{ resize: 'none' }}
+        style={{ resize: "none" }}
       ></textarea>
       <span className={`holder ${hasContent ? "has-content" : ""}`}>
         {placeholder}

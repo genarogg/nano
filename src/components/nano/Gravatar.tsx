@@ -8,9 +8,15 @@ interface GravatarProps {
   email: string;
   alt: string;
   size?: number;
+  className?: string;
 }
 
-const Gravatar: React.FC<GravatarProps> = ({ email, alt, size = 80 }) => {
+const Gravatar: React.FC<GravatarProps> = ({
+  email,
+  alt,
+  size = 80,
+  className = "",
+}) => {
   if (!isValidEmail(email)) {
     throw new Error("Invalid email");
   }
@@ -18,7 +24,16 @@ const Gravatar: React.FC<GravatarProps> = ({ email, alt, size = 80 }) => {
   const hash = md5(email.trim().toLowerCase());
   const url = `https://www.gravatar.com/avatar/${hash}`;
 
-  return <Image src={url} alt={alt} width={size} height={size} priority />;
+  return (
+    <Image
+      src={url}
+      alt={alt}
+      width={size}
+      height={size}
+      priority
+      className={className}
+    />
+  );
 };
 
 export default Gravatar;

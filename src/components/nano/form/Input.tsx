@@ -16,6 +16,7 @@ interface InputProps {
   min?: number;
   required?: boolean;
   disabled?: boolean;
+  className?: string;
 }
 
 const Input: React.FC<InputProps> = ({
@@ -31,6 +32,7 @@ const Input: React.FC<InputProps> = ({
   max,
   required = true,
   disabled = false,
+  className = "",
 }) => {
   const [isFocused, setIsFocused] = useState(false);
   const [hasContent, setHasContent] = useState(hasContentState);
@@ -48,7 +50,7 @@ const Input: React.FC<InputProps> = ({
 
   return (
     <div
-      className={`container-input ${isFocused ? "focus" : ""} ${
+      className={`container-input ${className} ${isFocused ? "focus" : ""} ${
         icono ? null : "no-icon"
       }`}
     >

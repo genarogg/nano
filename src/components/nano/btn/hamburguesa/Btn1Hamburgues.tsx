@@ -2,12 +2,14 @@ interface Btn1HamburguesProps {
   fn?: () => void;
   setIsActive: React.Dispatch<React.SetStateAction<boolean>>;
   isActive: boolean;
+  className?: string;
 }
 
 const Btn1Hamburgues: React.FC<Btn1HamburguesProps> = ({
   fn,
   isActive,
   setIsActive,
+  className = "",
 }) => {
   return (
     <button
@@ -15,7 +17,7 @@ const Btn1Hamburgues: React.FC<Btn1HamburguesProps> = ({
         setIsActive(!isActive);
         fn && fn();
       }}
-      className={`hamburguer1 btnMenu ${isActive ? "active" : ""}`}
+      className={`hamburguer1 btnMenu ${className} ${isActive ? "active" : ""}`}
     >
       <span></span>
       <span></span>

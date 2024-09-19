@@ -1,7 +1,11 @@
-interface homeProps {}
+interface indexProps {}
 
-const home: React.FC<homeProps> = () => {
-  return <p>hola</p>;
+const index: React.FC<indexProps> = () => {
+  return (
+    <div>
+      <h1>hola</h1>
+    </div>
+  );
 };
 
-export default home;
+export default index;

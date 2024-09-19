@@ -147,3 +147,31 @@
     }
   }
 }
+
+@include max-width(500px) {
+  .header.landing {
+    .desktop {
+      grid-template-columns: 2fr 8fr 2fr;
+      justify-items: center;
+      display: grid;
+
+      .container-logo {
+        order: 2;
+        justify-items: center;
+      }
+    }
+    .container-nav {
+      order: 1;
+
+      &.nav-xs {
+        left: -100%;
+        border-left: none;
+
+        &.active {
+          left: 0;
+          border-right: 1px solid rgba(255, 255, 255, 0.5);
+        }
+      }
+    }
+  }
+}

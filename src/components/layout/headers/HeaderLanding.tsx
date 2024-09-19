@@ -1,17 +1,13 @@
 import { useEffect, useState } from "react";
 
-import { FaEnvelopeOpenText } from "react-icons/fa";
-import { FaCommentDots } from "react-icons/fa";
+import { FaEnvelopeOpenText, FaCommentDots, FaLightbulb } from "react-icons/fa";
 import { GoFileDirectoryFill } from "react-icons/go";
-import { FaLightbulb } from "react-icons/fa";
 import { FaHandHoldingDollar } from "react-icons/fa6";
 import { TiHome } from "react-icons/ti";
 
 import { Btn3Hamburgues } from "@btn";
-
-
-
 import { A } from "@nano";
+
 import Nav from "./Navs/Nav";
 
 import LogoMarca from "../../imgReact/Logo";

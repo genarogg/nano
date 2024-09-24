@@ -1,0 +1,43 @@
+.wrapper {
+  min-height: 110vh;
+  min-height: 110dvh;
+}
+
+.header.landing-center {
+  height: 90px;
+  position: fixed;
+  top: 0;
+
+  * {
+    transition: $transition;
+  }
+
+  .desktop {
+    background-color: rgba($color-primary, 0.3);
+    backdrop-filter: blur(10px);
+    border-bottom: $border;
+
+    padding: 0 30px;
+    height: 90px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .container-nav.left,
+    .container-nav.right {
+      nav ul li {
+        &:first-child {
+          margin-left: 0;
+          .container-icono {
+            margin-left: 0;
+          }
+        }
+      }
+    }
+
+    .container-logo {
+      margin: 0 60px;
+    }
+  }
+}

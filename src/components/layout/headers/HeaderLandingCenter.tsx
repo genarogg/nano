@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 
 import Logo from "./Logo/Logo";
-import { FaEnvelopeOpenText, FaCommentDots, FaLightbulb } from "react-icons/fa";
-import { GoFileDirectoryFill } from "react-icons/go";
-import { FaHandHoldingDollar } from "react-icons/fa6";
-import { TiHome } from "react-icons/ti";
+// import { FaEnvelopeOpenText, FaCommentDots, FaLightbulb } from "react-icons/fa";
+// import { GoFileDirectoryFill } from "react-icons/go";
+// import { FaHandHoldingDollar } from "react-icons/fa6";
+// import { TiHome } from "react-icons/ti";
 
 import { Btn3Hamburgues } from "@btn";
 
@@ -15,16 +15,30 @@ import scrollHeader from "./HeaderFn/scrollHeader";
 interface HeaderLandingCenterProps {}
 
 // Definir los elementos del header
-const menuItemsLeft = [
-  { href: "/", label: "Inicio", icon: <TiHome /> },
-  { href: "#quienes-somos", label: "Quiénes Somos", icon: <FaCommentDots /> },
-  { href: "#servicios", label: "Servicios", icon: <FaLightbulb /> },
-];
+/* const menuItems = [
+  [
+    { href: "/", label: "Inicio", icon: <TiHome /> },
+    { href: "#quienes-somos", label: "Quiénes Somos", icon: <FaCommentDots /> },
+    { href: "#servicios", label: "Servicios", icon: <FaLightbulb /> },
+  ],
+  [
+    { href: "#", label: "Proyectos", icon: <GoFileDirectoryFill /> },
+    { href: "#", label: "Precios", icon: <FaHandHoldingDollar /> },
+    { href: "#", label: "Contacto", icon: <FaEnvelopeOpenText /> },
+  ],
+]; */
 
-const menuItemsRight = [
-  { href: "#", label: "Proyectos", icon: <GoFileDirectoryFill /> },
-  { href: "#", label: "Precios", icon: <FaHandHoldingDollar /> },
-  { href: "#", label: "Contacto", icon: <FaEnvelopeOpenText /> },
+const menuItems = [
+  [
+    { href: "/", label: "Inicio" },
+    { href: "#quienes-somos", label: "Quiénes Somos" },
+    { href: "#servicios", label: "Servicios" },
+  ],
+  [
+    { href: "#", label: "Proyectos" },
+    { href: "#", label: "Precios" },
+    { href: "#", label: "Contacto" },
+  ],
 ];
 
 const HeaderLandingCenter: React.FC<HeaderLandingCenterProps> = () => {
@@ -40,9 +54,9 @@ const HeaderLandingCenter: React.FC<HeaderLandingCenterProps> = () => {
     <>
       <header className="header landing-center">
         <div className="desktop" id="desktopHeader">
-          <Nav menuItems={menuItemsLeft} />
+          <Nav menuItems={menuItems[0]} className="left" />
           <Logo />
-          <Nav menuItems={menuItemsRight} />
+          <Nav menuItems={menuItems[1]} className="right" />
           <Btn3Hamburgues
             className={"btn-desktop"}
             isActive={isActive}

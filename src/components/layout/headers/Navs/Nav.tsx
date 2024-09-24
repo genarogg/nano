@@ -7,7 +7,7 @@ interface NavProps {
   menuItems: {
     href: string;
     label: string;
-    icon: React.ReactNode;
+    icon?: React.ReactNode;
   }[];
 }
 

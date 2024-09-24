@@ -18,5 +18,8 @@
   color: $text-color;
 }
 
-@import "./headers/headerLanding";
-@import "./headers/Navs/nav"
+@import "./headers/Logo/logo";
+@import "./headers/headerLandingLeft";
+@import "./headers/headerLandingCenter2";
+@import "./headers/headerLandingCenter";
+@import "./headers/Navs/nav";

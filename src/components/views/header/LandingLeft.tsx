@@ -1,14 +1,11 @@
-import HeaderLandingLeft from "./headers/HeaderLandingLeft";
+import HeaderLandingLeft from "../../layout/headers/HeaderLandingLeft";
 
-interface LayoutConstructorProps {
+interface LandingLeftProps {
   children: React.ReactNode;
   where?: string;
 }
 
-const LayoutConstructor: React.FC<LayoutConstructorProps> = ({
-  children,
-  where,
-}) => {
+const LandingLeft: React.FC<LandingLeftProps> = ({ children, where }) => {
   return (
     <div className={`${where} wrapper`}>
       <HeaderLandingLeft />
@@ -20,4 +17,4 @@ const LayoutConstructor: React.FC<LayoutConstructorProps> = ({
   );
 };
 
-export default LayoutConstructor;
+export default LandingLeft;

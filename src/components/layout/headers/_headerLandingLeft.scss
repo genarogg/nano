@@ -3,7 +3,7 @@
   min-height: 110dvh;
 }
 
-.header.landing {
+.header.landing-left {
   height: 90px;
   position: fixed;
   top: 0;
@@ -53,45 +53,24 @@
     }
   }
 
-  .container-logo {
-    a {
-      display: flex;
-
-      img,
-      svg {
-        width: 220px;
-        fill: $color-secondary;
-      }
-    }
-  }
-
   .btn-desktop {
     display: none;
   }
 }
 
 @include max-width(1500px) {
-  .header.landing {
+  .header.landing-left {
     .desktop {
       height: 85px;
       &.scrolled {
         height: 60px;
       }
     }
-
-    .container-logo {
-      a {
-        img,
-        svg {
-          width: 180px;
-        }
-      }
-    }
   }
 }
 
 @include max-width(1200px) {
-  .header.landing {
+  .header.landing-left {
     .desktop {
       height: 75px;
 
@@ -108,38 +87,20 @@
         }
       }
     }
-
-    .container-logo {
-      a {
-        img,
-        svg {
-          width: 150px;
-        }
-      }
-    }
   }
 }
 
 @include max-width(1000px) {
-  .header.landing {
+  .header.landing-left {
     .desktop {
       height: 55px;
       padding: 0 15px;
-
-      .container-logo {
-        a {
-          img,
-          svg {
-            width: 130px;
-          }
-        }
-      }
     }
   }
 }
 
 @include max-width(950px) {
-  .header.landing {
+  .header.landing-left {
     .desktop {
       .btn-desktop {
         display: flex;
@@ -149,7 +110,7 @@
 }
 
 @include max-width(500px) {
-  .header.landing {
+  .header.landing-left {
     .desktop {
       grid-template-columns: 2fr 8fr 2fr;
       justify-items: center;

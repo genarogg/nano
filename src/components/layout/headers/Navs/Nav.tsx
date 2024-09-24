@@ -18,7 +18,11 @@ const Nav: React.FC<NavProps> = ({
   setIsActive,
 }) => {
   return (
-    <div className={`container-nav ${className}  ${isActive ? "active" : ""}`}>
+    <div
+      className={`container-nav ${className}   ${isActive ? "active" : ""} ${
+        menuItems[0].icon ? "" : "sin-iconos"
+      }`}
+    >
       <nav>
         <ul>
           {menuItems.map((item, index) => (

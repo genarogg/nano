@@ -13,7 +13,7 @@ import Nav from "./Navs/Nav";
 import LogoMarca from "../../imgReact/Logo";
 import scrollHeader from "./HeaderFn/scrollHeader";
 
-interface HeaderLandingProps {}
+interface HeaderLandingLeftProps {}
 
 // Definir los elementos del header
 const home = { href: "#", logo: "/marca/logo.svg", alt: "Logo" };
@@ -26,7 +26,16 @@ const menuItems = [
   { href: "#contacto", label: "Contacto", icon: <FaEnvelopeOpenText /> },
 ];
 
-const HeaderLanding: React.FC<HeaderLandingProps> = () => {
+/* const menuItems = [
+  { href: "/", label: "Inicio" },
+  { href: "#quienes-somos", label: "Quiénes Somos" },
+  { href: "#servicios", label: "Servicios" },
+  { href: "#proyectos", label: "Proyectos" },
+  { href: "#precios", label: "Precios" },
+  { href: "#contacto", label: "Contacto" },
+]; */
+
+const HeaderLandingLeft: React.FC<HeaderLandingLeftProps> = () => {
   const [isActive, setIsActive] = useState(false);
 
   const Logo = () => {
@@ -47,7 +56,7 @@ const HeaderLanding: React.FC<HeaderLandingProps> = () => {
 
   return (
     <>
-      <header className="header landing">
+      <header className="header landing-left">
         <div className="desktop" id="desktopHeader">
           <Logo />
           <Nav menuItems={menuItems} />
@@ -68,4 +77,4 @@ const HeaderLanding: React.FC<HeaderLandingProps> = () => {
   );
 };
 
-export default HeaderLanding;
+export default HeaderLandingLeft;

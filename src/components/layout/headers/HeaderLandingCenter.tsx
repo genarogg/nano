@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 
 import Logo from "./Logo/Logo";
-// import { FaEnvelopeOpenText, FaCommentDots, FaLightbulb } from "react-icons/fa";
-// import { GoFileDirectoryFill } from "react-icons/go";
-// import { FaHandHoldingDollar } from "react-icons/fa6";
-// import { TiHome } from "react-icons/ti";
+import { FaEnvelopeOpenText, FaCommentDots, FaLightbulb } from "react-icons/fa";
+import { GoFileDirectoryFill } from "react-icons/go";
+import { FaHandHoldingDollar } from "react-icons/fa6";
+import { TiHome } from "react-icons/ti";
 
 import { Btn3Hamburgues } from "@btn";
 
@@ -15,7 +15,7 @@ import scrollHeader from "./HeaderFn/scrollHeader";
 interface HeaderLandingCenterProps {}
 
 // Definir los elementos del header
-/* const menuItems = [
+const menuItems = [
   [
     { href: "/", label: "Inicio", icon: <TiHome /> },
     { href: "#quienes-somos", label: "Quiénes Somos", icon: <FaCommentDots /> },
@@ -26,9 +26,9 @@ interface HeaderLandingCenterProps {}
     { href: "#", label: "Precios", icon: <FaHandHoldingDollar /> },
     { href: "#", label: "Contacto", icon: <FaEnvelopeOpenText /> },
   ],
-]; */
+];
 
-const menuItems = [
+/* const menuItems = [
   [
     { href: "/", label: "Inicio" },
     { href: "#quienes-somos", label: "Quiénes Somos" },
@@ -39,7 +39,9 @@ const menuItems = [
     { href: "#", label: "Precios" },
     { href: "#", label: "Contacto" },
   ],
-];
+]; */
+
+const menuItemsXS = menuItems[0].concat(menuItems[1]);
 
 const HeaderLandingCenter: React.FC<HeaderLandingCenterProps> = () => {
   const [isActive, setIsActive] = useState(false);
@@ -63,12 +65,12 @@ const HeaderLandingCenter: React.FC<HeaderLandingCenterProps> = () => {
             setIsActive={setIsActive}
           />
         </div>
-        {/*  <Nav
-          menuItems={menuItems}
+        <Nav
+          menuItems={menuItemsXS}
           className="nav-xs"
           isActive={isActive}
           setIsActive={setIsActive}
-        /> */}
+        />
       </header>
     </>
   );

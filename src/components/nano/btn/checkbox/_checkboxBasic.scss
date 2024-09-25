@@ -8,7 +8,7 @@
 
   &:hover {
     span {
-      color: $color-primary;
+      color: $color-secondary;
     }
   }
 
@@ -17,13 +17,13 @@
   }
 
   .icono {
-    @include center;
-    color: #fff;
+    @include center-flex-xy;
+    color: $color-secondary;
     margin-left: 10px;
   }
 
   .text {
-    color: #fff;
+    color: $color-secondary;
     margin-left: 24px;
     font-size: 18px;
     font-weight: 600;
@@ -36,7 +36,7 @@
     }
     50% {
       transform: scale(1.3);
-      color: $color-primary;
+      color: $color-secondary;
       opacity: 1;
     }
     100% {

@@ -1,4 +1,4 @@
-$azul: #007bff;
+$azul: $color-secondary;
 
 .container-input {
   border: 1px solid #aaa;
@@ -101,7 +101,7 @@ $azul: #007bff;
     min-width: 46px;
     .icono {
       @include center-flex-xy;
-      color: #fff;
+      color: $color-secondary;
     }
   }
 
@@ -132,7 +132,8 @@ $azul: #007bff;
   }
 
   span.holder {
-    background-color: #fff;
+    background-color: transparent;
+    backdrop-filter: blur(5px);
     color: $azul;
     font-size: 18px;
     left: 40px;

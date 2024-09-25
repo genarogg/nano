@@ -51,7 +51,7 @@ const Input: React.FC<InputProps> = ({
   return (
     <div
       className={`container-input ${className} ${isFocused ? "focus" : ""} ${
-        icono ? null : "no-icon"
+        icono ? "" : "no-icon"
       }`}
     >
       {icono && (

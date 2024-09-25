@@ -2,10 +2,10 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Nunito", sans-serif;
 }
 
 body {
-  font-family: "Nunito", sans-serif;
   font-size: 16px;
   line-height: 1.5;
 
@@ -17,7 +17,7 @@ body {
 
 a {
   text-decoration: none;
-  color: $text-color;
+  color: $text-color-white;
 }
 
 button {
@@ -31,11 +31,11 @@ ul {
 }
 
 ::-webkit-scrollbar {
-  width: 6px; 
+  width: 6px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #ffffff; 
+  background: #ffffff;
 }
 
 ::-webkit-scrollbar-thumb {

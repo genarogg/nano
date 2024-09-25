@@ -1,4 +1,5 @@
 import { Bounce, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.min.css";
 
 interface ToastProps {
   type: "success" | "error" | "warning";

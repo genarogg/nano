@@ -10,12 +10,21 @@
   /* background-color: $color-primary; */
 }
 
+main {
+  width: 100%;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  height: 100vh;
+  padding-top: 120px;
+}
+
 .footer {
   align-self: flex-end;
   background-color: $color-primary;
   width: 100%;
 
-  color: $text-color;
+  color: $text-color-white;
 }
 
 @import "./headers/Logo/logo";

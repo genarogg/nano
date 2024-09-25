@@ -19,9 +19,10 @@
       "@layout": ["./src/components/layout/Layout.tsx"],
       "@fn/*": ["./src/functions/*"],
       "@components/*": ["./src/components/*"],
-      "@view/*": ["./src/components/views/*"]
+      "@view/*": ["./src/components/views/*"],
+      "@formSkeleton": ["./src/components/form/formSkeleton.tsx"],
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx","**/**/*.tsx"],
   "exclude": ["node_modules"]
 }

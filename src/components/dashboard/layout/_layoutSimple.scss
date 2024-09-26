@@ -1,0 +1,24 @@
+.simple-db {
+  display: flex;
+  height: 100vh;
+  height: 100dvh;
+  overflow: hidden;
+
+  * {
+    border: 1px solid red;
+  }
+
+  .simple-aside {
+    max-width: 285px;
+    min-width: 285px;
+    height: 100vh;
+  }
+
+  main {
+    padding: 0;
+  }
+
+  .container-simple {
+    width: 100%;
+  }
+}

@@ -3,14 +3,15 @@
   height: 100vh;
   height: 100dvh;
   overflow: hidden;
+  background-color: #f4f7fe;
 
-  * {
+ /*  * {
     border: 1px solid red;
-  }
+  } */
 
   .simple-aside {
-    max-width: 285px;
-    min-width: 285px;
+    max-width: 250px;
+    min-width: 250px;
     height: 100vh;
   }
 

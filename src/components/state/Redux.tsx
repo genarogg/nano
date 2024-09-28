@@ -10,7 +10,7 @@ import React, {
 const initialState = {
   token: true,
   context: "home",
-  active_aside: false, // Nuevo estado
+  active_aside: true, // Nuevo estado
 };
 
 // Define el objeto para las acciones
@@ -105,4 +105,4 @@ const GlobalStateProvider: React.FC<{ children: ReactNode }> = ({
 };
 
 // Exporta todo al final
-export { GlobalStateProvider, GlobalStateContext, ActionTypes };
+export { GlobalStateProvider, GlobalStateContext, ActionTypes, initialState };

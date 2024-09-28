@@ -1,21 +1,24 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useState, useEffect } from "react";
 import { FaHandHoldingDollar } from "react-icons/fa6";
 import { Icono } from "@nano";
 import { BtnNormalBasic } from "@btn";
 import { GlobalStateContext } from "@redux";
 
-import Separador from "../separador/Separador";
-
 interface SimpleNavProps {}
 
 const SimpleNav: React.FC<SimpleNavProps> = () => {
-  const { dispatch } = useContext(GlobalStateContext);
-  const [selectedContext, setSelectedContext] = useState<string | null>(null);
+  const { state, dispatch } = useContext(GlobalStateContext);
+  const [selectedContext, setSelectedContext] = useState<string | null>("");
 
   const handleChangeContext = (newContext: string) => {
     dispatch({ type: "SET_CONTEXT", payload: newContext });
     setSelectedContext(newContext);
   };
+
+  useEffect(() => {
+    console.log("Contexto seleccionado actualizado:", state.context);
+    setSelectedContext(state.context);
+  }, [state.context]);
 
   const navSections = [
     {
@@ -29,17 +32,41 @@ const SimpleNav: React.FC<SimpleNavProps> = () => {
     {
       title: "Hola",
       items: [
-        { context: "newContext12", text: "hola", icon: <FaHandHoldingDollar /> },
-        { context: "newContext22", text: "hola", icon: <FaHandHoldingDollar /> },
-        { context: "newContext32", text: "hola", icon: <FaHandHoldingDollar /> },
+        {
+          context: "newContext12",
+          text: "hola",
+          icon: <FaHandHoldingDollar />,
+        },
+        {
+          context: "newContext22",
+          text: "hola",
+          icon: <FaHandHoldingDollar />,
+        },
+        {
+          context: "newContext32",
+          text: "hola",
+          icon: <FaHandHoldingDollar />,
+        },
       ],
     },
     {
       title: "Hola",
       items: [
-        { context: "newContext13", text: "hola", icon: <FaHandHoldingDollar /> },
-        { context: "newContext23", text: "hola", icon: <FaHandHoldingDollar /> },
-        { context: "newContext33", text: "hola", icon: <FaHandHoldingDollar /> },
+        {
+          context: "newContext13",
+          text: "hola",
+          icon: <FaHandHoldingDollar />,
+        },
+        {
+          context: "newContext23",
+          text: "hola",
+          icon: <FaHandHoldingDollar />,
+        },
+        {
+          context: "newContext33",
+          text: "hola",
+          icon: <FaHandHoldingDollar />,
+        },
       ],
     },
   ];
@@ -53,6 +80,19 @@ const SimpleNav: React.FC<SimpleNavProps> = () => {
           </div>
           <nav>
             <ul>
+              {section.items.map((item, itemIndex) => (
+                <li key={itemIndex}>
+                  <BtnNormalBasic
+                    className={
+                      selectedContext === item.context ? "selected" : ""
+                    }
+                    onClick={() => handleChangeContext(item.context)}
+                  >
+                    <Icono icono={item.icon} />
+                    <div className="text">{item.text}</div>
+                  </BtnNormalBasic>
+                </li>
+              ))}
               {section.items.map((item, itemIndex) => (
                 <li key={itemIndex}>
                   <BtnNormalBasic

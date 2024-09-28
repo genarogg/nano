@@ -3,10 +3,14 @@ import React, { createContext, useReducer, ReactNode, Dispatch } from "react";
 // Define el estado inicial
 const initialState = {
   token: true,
+  context: "home",
 };
 
 // Define las acciones
-type Action = { type: "LOGIN" } | { type: "LOGOUT" };
+type Action =
+  | { type: "LOGIN" }
+  | { type: "LOGOUT" }
+  | { type: "SET_CONTEXT"; payload: string };
 
 // Define el tipo de estado
 type State = typeof initialState;
@@ -18,6 +22,8 @@ const reducer = (state: State, action: Action): State => {
       return { ...state, token: true };
     case "LOGOUT":
       return { ...state, token: false };
+    case "SET_CONTEXT":
+      return { ...state, context: action.payload };
     default:
       return state;
   }

@@ -53,14 +53,14 @@
           }
 
           .icono {
-            @include cuadrado(40px);
+            @include cuadrado(30px);
             @include center-flex-xy;
 
             border-radius: 10px 0 0 10px;
             border-radius: 10px;
-            background-color: $color-secondary;
+            /* background-color: $color-secondary; */
 
-            margin: 0 15px 0 0px;
+            margin: 0 10px 0 0px;
           }
 
           .text {

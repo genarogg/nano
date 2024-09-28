@@ -1,5 +1,6 @@
 import SimpleNav from "./nav/SimpleNav";
 import TituloNavSimple from "./titulo/TituloNavSimple";
+import FooterNavSimple from "./footer/FooterNavSimple";
 
 interface AsideSimpleProps {}
 
@@ -8,7 +9,7 @@ const AsideSimple: React.FC<AsideSimpleProps> = () => {
     <aside className="simple-aside">
       <TituloNavSimple />
       <SimpleNav />
-      
+      <FooterNavSimple />
     </aside>
   );
 };

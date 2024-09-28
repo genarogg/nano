@@ -97,7 +97,6 @@ const SimpleNav: React.FC<SimpleNavProps> = () => {
           </nav>
         </div>
       ))}
-      
     </div>
   );
 };

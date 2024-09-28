@@ -1,4 +1,5 @@
 import Link from "next/link";
+import router from "next/router";
 
 interface AProps {
   href: string;
@@ -22,6 +23,10 @@ const A: React.FC<AProps> = ({ href, type, children, className }) => {
         {children}
       </a>
     );
+  }
+
+  if (type === "push") {
+    return router.push(href);
   }
 
   return (

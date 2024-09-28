@@ -16,7 +16,8 @@ const initialState = {
 type Action =
   | { type: "LOGIN" }
   | { type: "LOGOUT" }
-  | { type: "SET_CONTEXT"; payload: string };
+  | { type: "SET_CONTEXT"; payload: string }
+  | { type: "RESET_STATE" };
 
 // Define el tipo de estado
 type State = typeof initialState;
@@ -55,6 +56,8 @@ const reducer = (state: State, action: Action): State => {
         return { ...state, token: false };
       case "SET_CONTEXT":
         return { ...state, context: action.payload };
+      case "RESET_STATE":
+        return initialState;
       default:
         return state;
     }

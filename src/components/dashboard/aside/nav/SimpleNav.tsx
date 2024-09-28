@@ -1,16 +1,20 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from 'react';
 import { FaHandHoldingDollar } from "react-icons/fa6";
 import { Icono } from "@nano";
 import { BtnNormalBasic } from "@btn";
 import { GlobalStateContext } from "@redux";
 
+import Separador from "../separador/Separador";
+
 interface SimpleNavProps {}
 
 const SimpleNav: React.FC<SimpleNavProps> = () => {
   const { dispatch } = useContext(GlobalStateContext);
+  const [selectedContext, setSelectedContext] = useState<string | null>(null);
 
   const handleChangeContext = (newContext: string) => {
     dispatch({ type: "SET_CONTEXT", payload: newContext });
+    setSelectedContext(newContext);
   };
 
   const navSections = [
@@ -25,17 +29,17 @@ const SimpleNav: React.FC<SimpleNavProps> = () => {
     {
       title: "Hola",
       items: [
-        { context: "newContext1", text: "hola", icon: <FaHandHoldingDollar /> },
-        { context: "newContext2", text: "hola", icon: <FaHandHoldingDollar /> },
-        { context: "newContext3", text: "hola", icon: <FaHandHoldingDollar /> },
+        { context: "newContext12", text: "hola", icon: <FaHandHoldingDollar /> },
+        { context: "newContext22", text: "hola", icon: <FaHandHoldingDollar /> },
+        { context: "newContext32", text: "hola", icon: <FaHandHoldingDollar /> },
       ],
     },
     {
       title: "Hola",
       items: [
-        { context: "newContext1", text: "hola", icon: <FaHandHoldingDollar /> },
-        { context: "newContext2", text: "hola", icon: <FaHandHoldingDollar /> },
-        { context: "newContext3", text: "hola", icon: <FaHandHoldingDollar /> },
+        { context: "newContext13", text: "hola", icon: <FaHandHoldingDollar /> },
+        { context: "newContext23", text: "hola", icon: <FaHandHoldingDollar /> },
+        { context: "newContext33", text: "hola", icon: <FaHandHoldingDollar /> },
       ],
     },
   ];
@@ -52,6 +56,9 @@ const SimpleNav: React.FC<SimpleNavProps> = () => {
               {section.items.map((item, itemIndex) => (
                 <li key={itemIndex}>
                   <BtnNormalBasic
+                    className={
+                      selectedContext === item.context ? "selected" : ""
+                    }
                     onClick={() => handleChangeContext(item.context)}
                   >
                     <Icono icono={item.icon} />

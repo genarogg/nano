@@ -93,23 +93,11 @@ const SimpleNav: React.FC<SimpleNavProps> = () => {
                   </BtnNormalBasic>
                 </li>
               ))}
-              {section.items.map((item, itemIndex) => (
-                <li key={itemIndex}>
-                  <BtnNormalBasic
-                    className={
-                      selectedContext === item.context ? "selected" : ""
-                    }
-                    onClick={() => handleChangeContext(item.context)}
-                  >
-                    <Icono icono={item.icon} />
-                    <div className="text">{item.text}</div>
-                  </BtnNormalBasic>
-                </li>
-              ))}
             </ul>
           </nav>
         </div>
       ))}
+      
     </div>
   );
 };

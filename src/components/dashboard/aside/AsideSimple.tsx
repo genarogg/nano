@@ -1,16 +1,12 @@
 import SimpleNav from "./nav/SimpleNav";
-import Separador from "./separador/Separador";
+import TituloNavSimple from "./titulo/TituloNavSimple";
 
 interface AsideSimpleProps {}
 
 const AsideSimple: React.FC<AsideSimpleProps> = () => {
   return (
     <aside className="simple-aside">
-      <div className="tilte">
-        <h2>SimpleDB</h2>
-        <Separador />
-      </div>
-
+      <TituloNavSimple />
       <SimpleNav />
     </aside>
   );

@@ -75,3 +75,21 @@
     @content;
   }
 }
+
+@mixin scroll($color: #fff, $size: 6px, $bgColor: "#000") {
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: $color;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: $bgColor;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: $bgColor;
+  }
+}

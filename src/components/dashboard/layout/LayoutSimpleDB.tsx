@@ -1,6 +1,7 @@
 import { GlobalStateProvider, GlobalStateContext } from "@redux";
-import AsideSimple from "../aside/AsideSimple";
+import AsideSimple from "./aside/AsideSimple";
 import { useContext } from "react";
+import HeaderSimpleDB from "./header/HeaderSimpleDB";
 interface LayoutSimpleDBProps {
   children: React.ReactNode;
 }
@@ -14,7 +15,7 @@ const LayoutSimpleDB: React.FC<LayoutSimpleDBProps> = ({ children }) => {
       >
         <AsideSimple />
         <div className="container-simple">
-          <header className="header-simple">Header</header>
+          <HeaderSimpleDB />
           <main className="main-simple">{children}</main>
         </div>
       </div>

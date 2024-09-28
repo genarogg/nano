@@ -35,6 +35,10 @@ export type State = typeof initialState;
 
 // Función para guardar el estado en localStorage
 const saveStateToLocalStorage = (state: State) => {
+  if (typeof window === "undefined") {
+    return;
+  }
+
   try {
     const serializedState = JSON.stringify(state);
     localStorage.setItem("appState", serializedState);
@@ -45,6 +49,10 @@ const saveStateToLocalStorage = (state: State) => {
 
 // Función para cargar el estado desde localStorage
 const loadStateFromLocalStorage = (): State | undefined => {
+  if (typeof window === "undefined") {
+    return undefined;
+  }
+
   try {
     const serializedState = localStorage.getItem("appState");
     if (serializedState === null) {

@@ -8,6 +8,7 @@ const AsideSimple: React.FC<AsideSimpleProps> = () => {
     <aside className="simple-aside">
       <TituloNavSimple />
       <SimpleNav />
+      
     </aside>
   );
 };

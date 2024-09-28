@@ -1,4 +1,4 @@
-import { GlobalStateContext } from "@redux";
+import { GlobalStateContext, ActionTypes } from "@redux";
 import { useContext, useState } from "react";
 import Separador from "../separador/Separador";
 
@@ -9,7 +9,7 @@ const TituloNavSimple: React.FC<TituloNavSimpleProps> = () => {
   const [selectedContext, setSelectedContext] = useState<string | null>("");
 
   const handleChangeContext = (newContext: string) => {
-    dispatch({ type: "SET_CONTEXT", payload: newContext });
+    dispatch({ type: ActionTypes.SET_CONTEXT, payload: newContext });
     setSelectedContext(newContext);
   };
 
@@ -17,7 +17,7 @@ const TituloNavSimple: React.FC<TituloNavSimpleProps> = () => {
     <div className="nav-title-simple">
       <button
         className="nav-title-button"
-        onClick={() => handleChangeContext("initial")}
+        onClick={() => handleChangeContext("SimpleDB")}
       >
         <h2>SimpleDB</h2>
         <Separador />

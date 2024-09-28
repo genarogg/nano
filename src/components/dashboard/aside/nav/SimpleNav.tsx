@@ -2,7 +2,7 @@ import React, { useContext, useState, useEffect } from "react";
 import { FaHandHoldingDollar } from "react-icons/fa6";
 import { Icono } from "@nano";
 import { BtnNormalBasic } from "@btn";
-import { GlobalStateContext } from "@redux";
+import { GlobalStateContext, ActionTypes } from "@redux";
 
 interface SimpleNavProps {}
 
@@ -11,7 +11,7 @@ const SimpleNav: React.FC<SimpleNavProps> = () => {
   const [selectedContext, setSelectedContext] = useState<string | null>("");
 
   const handleChangeContext = (newContext: string) => {
-    dispatch({ type: "SET_CONTEXT", payload: newContext });
+    dispatch({ type: ActionTypes.SET_CONTEXT, payload: newContext });
     setSelectedContext(newContext);
   };
 

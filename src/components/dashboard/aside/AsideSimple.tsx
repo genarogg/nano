@@ -10,6 +10,7 @@ const AsideSimple: React.FC<AsideSimpleProps> = () => {
       <TituloNavSimple />
       <SimpleNav />
       <FooterNavSimple />
+      <button className="closed-nav-simple">cerrar</button>
     </aside>
   );
 };

@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { GlobalStateContext } from "@redux";
+import { GlobalStateContext, ActionTypes } from "@redux";
 import { A } from "@nano";
 import { BtnNormalBasic } from "@btn";
 import Separador from "../separador/Separador";
@@ -10,7 +10,7 @@ const FooterNavSimple: React.FC<FooterNavSimpleProps> = () => {
   const { dispatch } = useContext(GlobalStateContext);
 
   const handleReset = () => {
-    dispatch({ type: "RESET_STATE" });
+    dispatch({ type: ActionTypes.RESET_STATE });
     A({ href: "/", type: "push" });
   };
 

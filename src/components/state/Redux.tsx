@@ -10,17 +10,28 @@ import React, {
 const initialState = {
   token: true,
   context: "home",
+  active_aside: false, // Nuevo estado
 };
+
+// Define el objeto para las acciones
+const ActionTypes = {
+  LOGIN: "LOGIN",
+  LOGOUT: "LOGOUT",
+  SET_CONTEXT: "SET_CONTEXT",
+  RESET_STATE: "RESET_STATE",
+  SET_ACTIVE_ASIDE: "SET_ACTIVE_ASIDE",
+} as const;
 
 // Define las acciones
 type Action =
-  | { type: "LOGIN" }
-  | { type: "LOGOUT" }
-  | { type: "SET_CONTEXT"; payload: string }
-  | { type: "RESET_STATE" };
+  | { type: typeof ActionTypes.LOGIN }
+  | { type: typeof ActionTypes.LOGOUT }
+  | { type: typeof ActionTypes.SET_CONTEXT; payload: string }
+  | { type: typeof ActionTypes.RESET_STATE }
+  | { type: typeof ActionTypes.SET_ACTIVE_ASIDE; payload: boolean };
 
 // Define el tipo de estado
-type State = typeof initialState;
+export type State = typeof initialState;
 
 // Función para guardar el estado en localStorage
 const saveStateToLocalStorage = (state: State) => {
@@ -50,14 +61,16 @@ const loadStateFromLocalStorage = (): State | undefined => {
 const reducer = (state: State, action: Action): State => {
   const newState = (() => {
     switch (action.type) {
-      case "LOGIN":
+      case ActionTypes.LOGIN:
         return { ...state, token: true };
-      case "LOGOUT":
+      case ActionTypes.LOGOUT:
         return { ...state, token: false };
-      case "SET_CONTEXT":
+      case ActionTypes.SET_CONTEXT:
         return { ...state, context: action.payload };
-      case "RESET_STATE":
+      case ActionTypes.RESET_STATE:
         return initialState;
+      case ActionTypes.SET_ACTIVE_ASIDE:
+        return { ...state, active_aside: action.payload };
       default:
         return state;
     }
@@ -91,4 +104,5 @@ const GlobalStateProvider: React.FC<{ children: ReactNode }> = ({
   );
 };
 
-export { GlobalStateProvider, GlobalStateContext };
+// Exporta todo al final
+export { GlobalStateProvider, GlobalStateContext, ActionTypes };

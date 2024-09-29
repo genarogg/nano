@@ -41,7 +41,6 @@ const HeaderSimpleDB: React.FC<HeaderSimpleDBProps> = () => {
               </ul>
             </nav>
           </div>
-
           <LogoORuser />
         </div>
       </header>

@@ -7,12 +7,14 @@ interface MenuToolTipProps {
   children: React.ReactNode;
   items: string[] | React.ReactNode[] | undefined;
   className?: string;
+  placement?: "top" | "bottom" | "left" | "right";
 }
 
 const MenuToolTip: React.FC<MenuToolTipProps> = ({
   children,
   items,
   className = "",
+  placement = "bottom",
 }) => {
   return (
     <div className={`container-menu-tooltip ${className}`}>
@@ -33,7 +35,7 @@ const MenuToolTip: React.FC<MenuToolTipProps> = ({
         trigger="click"
         className="tooltip"
         arrow={true}
-        
+        placement={placement}
       >
         <button>{children}</button>
       </Tippy>

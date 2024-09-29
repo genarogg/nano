@@ -1,12 +1,27 @@
 import { A } from "@nano";
 import { MenuToolTip } from "@tooltip";
-import React, { useContext } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import { GlobalStateContext, ActionTypes } from "@redux";
+import Skeleton from "react-loading-skeleton";
+import "react-loading-skeleton/dist/skeleton.css";
 
 interface LogoORuserProps {}
 
 const LogoORuser: React.FC<LogoORuserProps> = () => {
-  const { dispatch } = useContext(GlobalStateContext);
+  const { state, dispatch } = useContext(GlobalStateContext);
+  const [isLoading, setIsLoading] = useState(true);
+  const [imageSrc, setImageSrc] = useState("");
+
+  useEffect(() => {
+    // Verifica si la imagen del estado global está disponible
+    if (state.user_image !== "") {
+      setImageSrc(state.user_image);
+      setIsLoading(false);
+    } else {
+      setImageSrc("https://avatars.githubusercontent.com/u/37651665");
+      setIsLoading(false);
+    }
+  }, [state.user_image]);
 
   const handleReset = () => {
     dispatch({ type: ActionTypes.RESET_STATE });
@@ -23,10 +38,16 @@ const LogoORuser: React.FC<LogoORuserProps> = () => {
     <div className="container-logo-user">
       <MenuToolTip items={items}>
         <div className="logo">
-          <img
-            src="https://pbs.twimg.com/profile_images/1701878932176351232/AlNU3WTK_400x400.jpg"
-            alt="logo"
-          />
+          {isLoading ? (
+            <Skeleton circle={true} height={40} width={40} />
+          ) : (
+            <img
+              src={imageSrc}
+              alt="logo"
+              onLoad={() => setIsLoading(false)}
+              onError={() => setIsLoading(false)}
+            />
+          )}
         </div>
       </MenuToolTip>
     </div>

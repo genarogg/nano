@@ -3,6 +3,7 @@
 
   .container-menu-tooltip {
     @include center-flex-xy;
+    width: 80px;
 
     .logo {
       @include center-flex-xy;

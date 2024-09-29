@@ -10,7 +10,8 @@ import React, {
 const initialState = {
   token: true,
   context: "home",
-  active_aside: false, // Nuevo estado
+  active_aside: false,
+  user_image: "", // Asegúrate de que esté definido correctamente
 };
 
 // Define el objeto para las acciones
@@ -20,6 +21,7 @@ const ActionTypes = {
   SET_CONTEXT: "SET_CONTEXT",
   RESET_STATE: "RESET_STATE",
   SET_ACTIVE_ASIDE: "SET_ACTIVE_ASIDE",
+  SET_USER_IMAGE: "SET_USER_IMAGE", // Nueva acción para la imagen del usuario
 } as const;
 
 // Define las acciones
@@ -28,7 +30,8 @@ type Action =
   | { type: typeof ActionTypes.LOGOUT }
   | { type: typeof ActionTypes.SET_CONTEXT; payload: string }
   | { type: typeof ActionTypes.RESET_STATE }
-  | { type: typeof ActionTypes.SET_ACTIVE_ASIDE; payload: boolean };
+  | { type: typeof ActionTypes.SET_ACTIVE_ASIDE; payload: boolean }
+  | { type: typeof ActionTypes.SET_USER_IMAGE; payload: string }; // Nueva acción para la imagen del usuario
 
 // Define el tipo de estado
 export type State = typeof initialState;
@@ -48,6 +51,7 @@ const saveStateToLocalStorage = (state: State) => {
     console.error("Error saving state to localStorage", e);
   }
 };
+
 // Función para cargar el estado desde localStorage
 const loadStateFromLocalStorage = (): State | undefined => {
   if (typeof window === "undefined") {
@@ -81,6 +85,8 @@ const reducer = (state: State, action: Action): State => {
         return initialState;
       case ActionTypes.SET_ACTIVE_ASIDE:
         return { ...state, active_aside: action.payload };
+      case ActionTypes.SET_USER_IMAGE:
+        return { ...state, user_image: action.payload }; // Maneja la nueva acción
       default:
         return state;
     }

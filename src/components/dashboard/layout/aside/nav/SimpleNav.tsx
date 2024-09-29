@@ -1,75 +1,23 @@
-import React, { useContext, useState, useEffect } from "react";
-import { FaHandHoldingDollar } from "react-icons/fa6";
+import React from "react";
 import { Icono } from "@nano";
 import { BtnNormalBasic } from "@btn";
-import { GlobalStateContext, ActionTypes } from "@redux";
+import { useSimpleNav } from "../../fn/useSimpleNav";
+
+import { components } from "../../main/components/Components";
 
 interface SimpleNavProps {}
 
 const SimpleNav: React.FC<SimpleNavProps> = () => {
-  const { state, dispatch } = useContext(GlobalStateContext);
-  const [selectedContext, setSelectedContext] = useState<string | null>("");
+  const { selectedContext, handleChangeContext } = useSimpleNav();
 
-  const handleChangeContext = (newContext: string) => {
-    dispatch({ type: ActionTypes.SET_CONTEXT, payload: newContext });
-    setSelectedContext(newContext);
-  };
-
-  useEffect(() => {
-    console.log("Contexto seleccionado actualizado:", state.context);
-    setSelectedContext(state.context);
-  }, [state.context]);
-
-  const navSections = [
-    {
-      title: "Hola",
-      items: [
-        { context: "newContext1", text: "hola", icon: <FaHandHoldingDollar /> },
-        { context: "newContext2", text: "hola", icon: <FaHandHoldingDollar /> },
-        { context: "newContext3", text: "hola", icon: <FaHandHoldingDollar /> },
-      ],
-    },
-    {
-      title: "Hola",
-      items: [
-        {
-          context: "newContext12",
-          text: "hola",
-          icon: <FaHandHoldingDollar />,
-        },
-        {
-          context: "newContext22",
-          text: "hola",
-          icon: <FaHandHoldingDollar />,
-        },
-        {
-          context: "newContext32",
-          text: "hola",
-          icon: <FaHandHoldingDollar />,
-        },
-      ],
-    },
-    {
-      title: "Hola",
-      items: [
-        {
-          context: "newContext13",
-          text: "hola",
-          icon: <FaHandHoldingDollar />,
-        },
-        {
-          context: "newContext23",
-          text: "hola",
-          icon: <FaHandHoldingDollar />,
-        },
-        {
-          context: "newContext33",
-          text: "hola",
-          icon: <FaHandHoldingDollar />,
-        },
-      ],
-    },
-  ];
+  const navSections = components.map((section) => ({
+    title: section.titleSecction,
+    items: section.elements.map((element) => ({
+      context: element.context,
+      text: element.context,
+      icon: element.icon,
+    })),
+  }));
 
   return (
     <div className="container-nav-simple">

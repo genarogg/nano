@@ -23,7 +23,8 @@
     "reactjs-popup": "^2.0.6",
     "sass": "^1.78.0",
     "styled-components": "^6.1.13",
-    "tippy.js": "^6.3.7"
+    "tippy.js": "^6.3.7",
+    "react-transition-group": "^4.4.5"
   },
   "devDependencies": {
     "@types/crypto-js": "^4.2.2",
@@ -31,6 +32,7 @@
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "eslint": "^8",
+    "@types/react-transition-group": "^4.4.10",
     "eslint-config-next": "14.2.7",
     "typescript": "^5"
   }

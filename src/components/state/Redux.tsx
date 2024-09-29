@@ -9,7 +9,7 @@ import React, {
 // Define el estado inicial
 const initialState = {
   token: true,
-  context: "home",
+  context: "inicio",
   active_aside: false,
   user_image: "", // Asegúrate de que esté definido correctamente
 };

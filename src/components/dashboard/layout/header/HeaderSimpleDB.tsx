@@ -1,10 +1,21 @@
 import { A } from "@nano";
 
+import { GlobalStateContext } from "@redux";
+
+import { useEffect, useContext, useState } from "react";
 import LogoORuser from "./btn/LogoORuser";
 
 interface HeaderSimpleDBProps {}
 
 const HeaderSimpleDB: React.FC<HeaderSimpleDBProps> = () => {
+  const { state } = useContext(GlobalStateContext);
+
+  const [context, setContext] = useState<string | null>("");
+
+  useEffect(() => {
+    setContext(state.context);
+  }, [state.context]);
+
   const cantidadDeItems = 2;
 
   return (
@@ -19,7 +30,7 @@ const HeaderSimpleDB: React.FC<HeaderSimpleDBProps> = () => {
               </h6>
             </div>
             <div className="name-component">
-              <h4>Dashboard</h4>
+              <h4>{context}</h4>
             </div>
           </div>
         </div>

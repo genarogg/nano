@@ -56,13 +56,17 @@
         h6 {
           color: $color-secondary;
           font-size: 14px;
+          text-transform: capitalize;
+          font-style: italic;
         }
       }
 
       .name-component {
         h4 {
           color: $color-secondary;
-          font-size: 20px;
+          font-size: 18px;
+          text-transform: uppercase;
+          font-weight: 600;
         }
       }
     }

@@ -11,9 +11,10 @@ const HeaderSimpleDB: React.FC<HeaderSimpleDBProps> = () => {
   const { state } = useContext(GlobalStateContext);
 
   const [context, setContext] = useState<string | null>("");
-
+  const [subContext, subSetContext] = useState<string | null>("");
   useEffect(() => {
     setContext(state.context);
+    subSetContext(state.sub_context);
   }, [state.context]);
 
   const cantidadDeItems = 2;
@@ -25,8 +26,11 @@ const HeaderSimpleDB: React.FC<HeaderSimpleDBProps> = () => {
           <div className="ruta">
             <div className="ruta-completa">
               <h6>
-                <A href="/">hola</A> / <A href="/">hola</A> /{" "}
-                <A href="/">hola</A>
+                <A href="#">Dashboard</A>
+                {" / "}
+                <A href="#">{subContext}</A>
+                {" / "}
+                <A href="#">{context}</A>
               </h6>
             </div>
             <div className="name-component">

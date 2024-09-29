@@ -34,7 +34,9 @@ const SimpleNav: React.FC<SimpleNavProps> = () => {
                     className={
                       selectedContext === item.context ? "selected" : ""
                     }
-                    onClick={() => handleChangeContext(item.context)}
+                    onClick={() =>
+                      handleChangeContext(item.context, section.title)
+                    }
                   >
                     <Icono icono={item.icon} />
                     <div className="text">{item.text}</div>

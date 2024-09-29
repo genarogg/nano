@@ -10,6 +10,7 @@ import React, {
 const initialState = {
   token: true,
   context: "inicio",
+  sub_context: "", // Nuevo parámetro añadido
   active_aside: false,
   user_image: "", // Asegúrate de que esté definido correctamente
 };
@@ -19,6 +20,7 @@ const ActionTypes = {
   LOGIN: "LOGIN",
   LOGOUT: "LOGOUT",
   SET_CONTEXT: "SET_CONTEXT",
+  SET_SUB_CONTEXT: "SET_SUB_CONTEXT", // Nueva acción para sub_context
   RESET_STATE: "RESET_STATE",
   SET_ACTIVE_ASIDE: "SET_ACTIVE_ASIDE",
   SET_USER_IMAGE: "SET_USER_IMAGE", // Nueva acción para la imagen del usuario
@@ -29,6 +31,7 @@ type Action =
   | { type: typeof ActionTypes.LOGIN }
   | { type: typeof ActionTypes.LOGOUT }
   | { type: typeof ActionTypes.SET_CONTEXT; payload: string }
+  | { type: typeof ActionTypes.SET_SUB_CONTEXT; payload: string } // Nueva acción para sub_context
   | { type: typeof ActionTypes.RESET_STATE }
   | { type: typeof ActionTypes.SET_ACTIVE_ASIDE; payload: boolean }
   | { type: typeof ActionTypes.SET_USER_IMAGE; payload: string }; // Nueva acción para la imagen del usuario
@@ -81,6 +84,8 @@ const reducer = (state: State, action: Action): State => {
         return { ...state, token: false };
       case ActionTypes.SET_CONTEXT:
         return { ...state, context: action.payload };
+      case ActionTypes.SET_SUB_CONTEXT:
+        return { ...state, sub_context: action.payload }; // Maneja la nueva acción
       case ActionTypes.RESET_STATE:
         return initialState;
       case ActionTypes.SET_ACTIVE_ASIDE:

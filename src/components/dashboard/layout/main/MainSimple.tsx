@@ -11,16 +11,18 @@ const MainSimple: React.FC<MainSimpleProps> = () => {
   const { state } = useContext(GlobalStateContext);
 
   useEffect(() => {
-    setContext(components[0].elements[0].context);
-  }, []);
+    setContext(state.context);
+  }, [state]);
 
   const renderComponent = () => {
-    switch (state.context) {
-      case components[0].elements[0].context:
-        return React.createElement(components[0].elements[0].component);
-      default:
-        return <p>d</p>;
+    for (const section of components) {
+      for (const element of section.elements) {
+        if (element.context === context) {
+          return React.createElement(element.component);
+        }
+      }
     }
+    return <p>Componente no encontrado</p>; // Componente por defecto si no se encuentra coincidencia
   };
 
   return (

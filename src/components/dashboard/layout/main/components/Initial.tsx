@@ -1,9 +1,9 @@
 interface InitialProps {}
 
-const Initial: React.FC<InitialProps> = () => {
+const Initial: React.FC<InitialProps> = ({}) => {
   return (
     <>
-      <h1>hola</h1>
+      <h1>hola {}</h1>
     </>
   );
 };

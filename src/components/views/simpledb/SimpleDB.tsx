@@ -5,7 +5,7 @@ interface SimpleDBProps {}
 const SimpleDB: React.FC<SimpleDBProps> = () => {
   return (
     <LayoutSimpleDB>
-      <p>hola</p>
+      
     </LayoutSimpleDB>
   );
 };

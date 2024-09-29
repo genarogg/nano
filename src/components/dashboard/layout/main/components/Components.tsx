@@ -1,4 +1,5 @@
 import Initial from "./Initial";
+import Initial2 from "./Initial2";
 
 // @iconos
 import { HiHome } from "react-icons/hi";
@@ -20,7 +21,7 @@ const components = [
     titleSecction: "Tablas",
     elements: [
       {
-        component: Initial,
+        component: Initial2,
         context: "mis datos",
         icon: <PiTableThin />,
       },
@@ -35,12 +36,12 @@ const components = [
     titleSecction: "bitacora",
     elements: [
       {
-        component: Initial,
+        component: Initial2,
         context: "bitacora",
         icon: <FaCalendarAlt />,
       },
       {
-        component: Initial,
+        component: Initial2,
         context: "datos",
         icon: <FaCalendarAlt />,
       },

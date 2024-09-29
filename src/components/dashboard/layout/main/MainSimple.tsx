@@ -1,22 +1,25 @@
-import React from "react";
+import React, { useEffect, useState, useContext } from "react";
 import { SwitchTransition, CSSTransition } from "react-transition-group";
-import Initial from "./components/Initial";
-
 import { GlobalStateContext } from "@components/state/Redux";
+import { components } from "./components/Components";
 
-interface MainSimpleProps {
+interface MainSimpleProps {}
 
-}
+const MainSimple: React.FC<MainSimpleProps> = () => {
+  const [context, setContext] = useState<string | null>("inicio");
 
-const MainSimple: React.FC<MainSimpleProps> = ({}) => {
+  const { state } = useContext(GlobalStateContext);
+
+  useEffect(() => {
+    setContext(components[0].elements[0].context);
+  }, []);
+
   const renderComponent = () => {
-    switch (context) {
-      case "initial":
-        return <Initial setContext={setContext} />;
-      case "mis-datos":
-        return <Perfil />;
+    switch (state.context) {
+      case components[0].elements[0].context:
+        return React.createElement(components[0].elements[0].component);
       default:
-        return <Demo />;
+        return <p>d</p>;
     }
   };
 

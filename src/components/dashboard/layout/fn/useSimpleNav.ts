@@ -17,12 +17,10 @@ export const useSimpleNav = () => {
   };
 
   useEffect(() => {
-    console.log("Contexto seleccionado actualizado:", state.context);
     setSelectedContext(state.context);
   }, [state.context]);
 
   useEffect(() => {
-    console.log("Sub-contexto seleccionado actualizado:", state.sub_context);
     setSelectedSubContext(state.sub_context);
   }, [state.sub_context]);
 

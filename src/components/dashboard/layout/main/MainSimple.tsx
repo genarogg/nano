@@ -27,8 +27,12 @@ const MainSimple: React.FC<MainSimpleProps> = () => {
 
   return (
     <SwitchTransition>
-      <CSSTransition key={context} timeout={500} classNames="fade">
-        {renderComponent()}
+      <CSSTransition
+        key={context}
+        timeout={500}
+        classNames="main-component fade"
+      >
+        <div className="container-main-db">{renderComponent()}</div>
       </CSSTransition>
     </SwitchTransition>
   );

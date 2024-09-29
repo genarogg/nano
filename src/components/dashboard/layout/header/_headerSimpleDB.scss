@@ -8,7 +8,8 @@
   align-items: center;
 
   .right {
-    &.container-nav {
+    @include center-flex-xy;
+    .container-nav {
       @include center-flex-xy;
       border-radius: $border-radius;
       padding: 0 10px;
@@ -20,7 +21,7 @@
       ); */
       /* background-color: rgba($color-secondary, 0.2); */
       height: 40px;
-      border: 1px solid $color-secondary;
+      border: 2px solid $color-secondary;
       ul {
         display: grid;
         gap: 25px;

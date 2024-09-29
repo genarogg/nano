@@ -1,10 +1,23 @@
-import { MenuToolTip } from "@nano";
-import "reactjs-popup/dist/index.css";
+import { A } from "@nano";
+import { MenuToolTip } from "@tooltip";
+import React, { useContext } from "react";
+import { GlobalStateContext, ActionTypes } from "@redux";
 
 interface LogoORuserProps {}
 
 const LogoORuser: React.FC<LogoORuserProps> = () => {
-  const items = ["Item 2", "Item 3", "Item 4"];
+  const { dispatch } = useContext(GlobalStateContext);
+
+  const handleReset = () => {
+    dispatch({ type: ActionTypes.RESET_STATE });
+    A({ href: "/", type: "push" });
+  };
+
+  const items = [
+    <button key={1} onClick={handleReset}>
+      cerrar sesion
+    </button>,
+  ];
 
   return (
     <div className="container-logo-user">

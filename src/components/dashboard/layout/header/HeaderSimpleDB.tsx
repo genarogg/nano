@@ -24,19 +24,25 @@ const HeaderSimpleDB: React.FC<HeaderSimpleDBProps> = () => {
           </div>
         </div>
 
-        <div className="right container-nav">
-          <nav>
-            <ul
-              style={{ gridTemplateColumns: `repeat(${cantidadDeItems}, 1fr)` }}
-            >
-              <li>
-                <button>1</button>
-              </li>
-              <li>
-                <LogoORuser />
-              </li>
-            </ul>
-          </nav>
+        <div className="right ">
+          <div className="container-nav">
+            <nav>
+              <ul
+                style={{
+                  gridTemplateColumns: `repeat(${cantidadDeItems}, 1fr)`,
+                }}
+              >
+                <li>
+                  <button>1</button>
+                </li>
+                <li>
+                  <button>2</button>
+                </li>
+              </ul>
+            </nav>
+          </div>
+
+          <LogoORuser />
         </div>
       </header>
     </>

@@ -5,9 +5,11 @@ import { GlobalStateContext, ActionTypes } from "@redux";
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
 
-interface LogoORuserProps {}
+interface LogoORuserProps {
+  size?: number;
+}
 
-const LogoORuser: React.FC<LogoORuserProps> = () => {
+const LogoORuser: React.FC<LogoORuserProps> = ({ size = 40 }) => {
   const { state, dispatch } = useContext(GlobalStateContext);
   const [isLoading, setIsLoading] = useState(true);
   const [imageSrc, setImageSrc] = useState("");
@@ -39,7 +41,7 @@ const LogoORuser: React.FC<LogoORuserProps> = () => {
       <MenuToolTip items={items}>
         <div className="logo">
           {isLoading ? (
-            <Skeleton circle={true} height={40} width={40} />
+            <Skeleton circle={true} height={size} width={size} />
           ) : (
             <img
               src={imageSrc}

@@ -2,6 +2,7 @@
 @import "./global/mixin";
 
 @import "./global/global";
+@import "./global/animaciones";
 @import "../components/nano/style";
 
 @import "../components/layout/layout";
@@ -11,4 +12,4 @@
 
 @import "../components/form/formSkeleton";
 
-@import "../components/dashboard/dashboard"
+@import "../components/dashboard/dashboard";

@@ -1,37 +1,39 @@
 import { A } from "@nano";
 
-A;
+import LogoORuser from "./btn/LogoORuser";
 
 interface HeaderSimpleDBProps {}
 
 const HeaderSimpleDB: React.FC<HeaderSimpleDBProps> = () => {
+  const cantidadDeItems = 2;
+
   return (
     <>
       <header className="header-simple-db">
-        <div className="ruta">
-          <div className="ruta-completa">
-            <h6>
-              <A href="/">hola</A> / <A href="/">hola</A> / <A href="/">hola</A>
-            </h6>
-          </div>
-          <div className="name-component">
-            <h4>Dashboard</h4>
+        <div className="left">
+          <div className="ruta">
+            <div className="ruta-completa">
+              <h6>
+                <A href="/">hola</A> / <A href="/">hola</A> /{" "}
+                <A href="/">hola</A>
+              </h6>
+            </div>
+            <div className="name-component">
+              <h4>Dashboard</h4>
+            </div>
           </div>
         </div>
-        <div className="container-nav">
+
+        <div className="right container-nav">
           <nav>
-            <ul>
+            <ul
+              style={{ gridTemplateColumns: `repeat(${cantidadDeItems}, 1fr)` }}
+            >
               <li>
-                <button>Button 1</button>
+                <button>1</button>
               </li>
               <li>
-                <button>Button 2</button>
-              </li>
-              <li>
-                <button>Button 3</button>
-              </li>
-              <li>
-                <button>Button 4</button>
+                <LogoORuser />
               </li>
             </ul>
           </nav>

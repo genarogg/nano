@@ -10,7 +10,7 @@ import React, {
 const initialState = {
   token: true,
   context: "home",
-  active_aside: true, // Nuevo estado
+  active_aside: false, // Nuevo estado
 };
 
 // Define el objeto para las acciones
@@ -40,13 +40,14 @@ const saveStateToLocalStorage = (state: State) => {
   }
 
   try {
-    const serializedState = JSON.stringify(state);
+    // Excluye active_aside del estado antes de guardarlo
+    const { active_aside, ...stateToSave } = state;
+    const serializedState = JSON.stringify(stateToSave);
     localStorage.setItem("appState", serializedState);
   } catch (e) {
     console.error("Error saving state to localStorage", e);
   }
 };
-
 // Función para cargar el estado desde localStorage
 const loadStateFromLocalStorage = (): State | undefined => {
   if (typeof window === "undefined") {
@@ -58,7 +59,8 @@ const loadStateFromLocalStorage = (): State | undefined => {
     if (serializedState === null) {
       return undefined;
     }
-    return JSON.parse(serializedState);
+    const loadedState = JSON.parse(serializedState);
+    return { ...loadedState, active_aside: false }; // Asegúrate de que active_aside esté presente
   } catch (e) {
     console.error("Error loading state from localStorage", e);
     return undefined;

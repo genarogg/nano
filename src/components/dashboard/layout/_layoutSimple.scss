@@ -5,10 +5,19 @@
   overflow: hidden;
   background-color: #f4f7fe;
 
- /*  * {
-    border: 1px solid red;
-  } */
+  * {
+    transition: $transition;
+  }
 
+  &.aside-active {
+    .simple-aside {
+      left: -250px;
+    }
+
+    .container-simple {
+      padding-left: 0;
+    }
+  }
   .simple-aside {
     max-width: 250px;
     min-width: 250px;
@@ -22,7 +31,30 @@
   .container-simple {
     width: 100%;
     padding-left: 250px;
-    // padding: 30px;
-    // padding-left: calc(250px + 30px);
+  }
+
+  .closed-nav-simple {
+    @include cuadrado(60px);
+    // @include center-flex-xy;
+    background-color: $color-quaternary;
+    z-index: 1000;
+    position: absolute;
+    top: 70px;
+
+    right: -60px;
+    border-radius: 0 0 30px 0;
+    clip-path: polygon(0 0, 0% 100%, 100% 0);
+    overflow: hidden;
+
+    button {
+      // @include cuadrado(20px);
+      @include cuadrado(40px);
+      @include center-flex-xy;
+      color: $text-color-white;
+
+      svg {
+        @include cuadrado(20px);
+      }
+    }
   }
 }

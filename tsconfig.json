@@ -22,7 +22,8 @@
       "@view/*": ["./src/components/views/*"],
       "@formSkeleton": ["./src/components/form/formSkeleton.tsx"],
 
-      "@redux": ["./src/components/state/Redux.tsx"]
+      "@redux": ["./src/components/state/Redux.tsx"],
+      "@provider": ["./src/components/state/Provider.tsx"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "**/**/*.tsx"],

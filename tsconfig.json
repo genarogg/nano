@@ -18,7 +18,7 @@
       "@nano": ["./src/components/nano/index.tsx"],
       "@layout": ["./src/components/layout/Layout.tsx"],
       "@fn/*": ["./src/functions/*"],
-      "@tooltip": ["./src/components/nano/tooltip/Tooltip.tsx"],
+      "@tooltip": ["./src/components/nano/tooltip/ToolTip.tsx"],
       "@components/*": ["./src/components/*"],
       "@view/*": ["./src/components/views/*"],
       "@formSkeleton": ["./src/components/form/formSkeleton.tsx"],
@@ -27,6 +27,6 @@
       "@provider": ["./src/components/state/Provider.tsx"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "**/**/*.tsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "**/**/*.tsx", "**/**/**/*.tsx"],
   "exclude": ["node_modules"]
 }

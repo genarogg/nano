@@ -7,10 +7,10 @@ import HeaderSimpleDB from "./header/HeaderSimpleDB";
 import MainSimple from "./main/MainSimple";
 
 interface LayoutSimpleDBProps {
-  children: React.ReactNode;
+
 }
 
-const LayoutSimpleDB: React.FC<LayoutSimpleDBProps> = ({ children }) => {
+const LayoutSimpleDB: React.FC<LayoutSimpleDBProps> = () => {
   const { state } = useContext(GlobalStateContext);
 
   return (

@@ -1,9 +1,11 @@
-interface indexProps {}
+import { A } from "@nano"
+
+interface indexProps { }
 
 const index: React.FC<indexProps> = () => {
   return (
-    <div>
-      <h1>hola</h1>
+    <div className="home">
+      <A href="/headers">headers</A>
     </div>
   );
 };

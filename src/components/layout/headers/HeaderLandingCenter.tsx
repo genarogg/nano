@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-import Logo from "@imgSVG/Logo";
+import Logo from "./logo/Logo";
 
 import { FaEnvelopeOpenText, FaCommentDots, FaLightbulb } from "react-icons/fa";
 import { GoFileDirectoryFill } from "react-icons/go";

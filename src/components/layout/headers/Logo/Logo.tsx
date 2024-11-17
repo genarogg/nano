@@ -1,5 +1,5 @@
 import { A } from "@nano";
-import LogoMarca from "@components/imgReact/Logo";
+import LogoMarca from "../../../../imgSVG/Logo";
 
 interface LogoProps {}
 

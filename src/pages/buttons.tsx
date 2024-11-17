@@ -2,9 +2,9 @@ import { useState } from "react";
 
 import { Btn1Hamburgues, Btn2Hamburgues, Btn3Hamburgues } from "@btn";
 
-interface BotonesProps {}
+interface ButtonsProps {}
 
-const Botones: React.FC<BotonesProps> = () => {
+const Buttons: React.FC<ButtonsProps> = () => {
   const [isActive, setIsActive] = useState(false);
 
   return (
@@ -25,4 +25,4 @@ const Botones: React.FC<BotonesProps> = () => {
   );
 };
 
-export default Botones;
+export default Buttons;

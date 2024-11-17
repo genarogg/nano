@@ -1,6 +1,6 @@
 import React from "react";
 
-interface headersProps {}
+interface headersProps { }
 
 const headers: React.FC<headersProps> = () => {
   const cards = [

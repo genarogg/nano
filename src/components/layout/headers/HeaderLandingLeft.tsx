@@ -10,8 +10,8 @@ import { A } from "@nano";
 
 import Nav from "./Navs/Nav";
 
-import LogoMarca from "../../imgReact/Logo";
-import scrollHeader from "./HeaderFn/scrollHeader";
+import LogoMarca from "@imgSVG/Logo";
+import scrollHeader from "../../../../../sistema-administrativo-para-escuela/src/components/layout/header/HeaderFn/scrollHeader";
 
 interface HeaderLandingLeftProps {}
 

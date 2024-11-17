@@ -22,6 +22,7 @@
       "@components/*": ["./src/components/*"],
       "@view/*": ["./src/components/views/*"],
       "@formSkeleton": ["./src/components/form/formSkeleton.tsx"],
+      "@imgSVG/*":["./src/imgSVG/*"],
 
       "@redux": ["./src/components/state/Redux.tsx"],
       "@provider": ["./src/components/state/Provider.tsx"]

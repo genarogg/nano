@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 
-import Logo from "./Logo/Logo";
+import Logo from "@imgSVG/Logo";
+
 import { FaEnvelopeOpenText, FaCommentDots, FaLightbulb } from "react-icons/fa";
 import { GoFileDirectoryFill } from "react-icons/go";
 import { FaHandHoldingDollar } from "react-icons/fa6";
@@ -10,9 +11,9 @@ import { Btn3Hamburgues } from "@btn";
 
 import Nav from "./Navs/Nav";
 
-import scrollHeader from "./HeaderFn/scrollHeader";
+import scrollHeader from "../../../../../sistema-administrativo-para-escuela/src/components/layout/header/HeaderFn/scrollHeader";
 
-interface HeaderLandingCenterProps {}
+interface HeaderLandingCenterProps { }
 
 // Definir los elementos del header
 const menuItems = [
